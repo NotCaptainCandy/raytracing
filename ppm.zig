@@ -23,6 +23,7 @@ pub fn main(init: std.process.Init) !void {
     var j: u16 = 0;
 
     while (i < IMAGE_HEIGHT) : (i += 1) {
+        std.log.info("\rScanlines remaining: {} ", .{IMAGE_HEIGHT - i});
         while (j < IMAGE_WIDTH) : (j += 1) {
             try fw.print("{} 0 {}\n", .{ j, i });
         }
